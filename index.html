@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partia Populistyczna Przyszłej Polski</title>
+  <meta name="description" content="Oficjalna strona startowa Partii Populistycznej Przyszłej Polski. Program ambitny, spójność opcjonalna, estetyka obowiązkowa.">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: rgba(255, 255, 255, 0.06);
+      --card: rgba(8, 15, 29, 0.84);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f7f4ed;
+      --muted: #b5bfd3;
+      --accent: #ffd54f;
+      --accent-2: #ff6f61;
+      --accent-3: #7ae7c7;
+      --shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 111, 97, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(122, 231, 199, 0.18), transparent 26%),
+        radial-gradient(circle at bottom center, rgba(255, 213, 79, 0.18), transparent 30%),
+        linear-gradient(180deg, #08111f 0%, #0a1527 45%, #0d1120 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 17, 31, 0.58);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #1f1300;
+      box-shadow: var(--shadow);
+      font-size: 1.2rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .card,
+    .manifesto-item,
+    .quote,
+    .cta {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.13rem;
+      line-height: 1.72;
+      max-width: 58ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ffc13a);
+      color: #2c1a00;
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .microcopy {
+      color: #91a0bf;
+      font-size: 0.9rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      height: 100%;
+    }
+
+    .card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 190px;
+    }
+
+    .card .label {
+      color: var(--accent-3);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .card strong {
+      display: block;
+      margin: 14px 0 10px;
+      font-size: 2.3rem;
+      letter-spacing: -0.06em;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    section {
+      padding: 22px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 22px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 62ch;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .manifesto-item {
+      padding: 24px;
+    }
+
+    .manifesto-item span {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .manifesto-item h3 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .manifesto-item p {
+      color: var(--muted);
+      line-height: 1.68;
+      margin-bottom: 0;
+    }
+
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .quote {
+      padding: 24px;
+    }
+
+    .quote p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .quote small {
+      color: var(--muted);
+      display: block;
+      line-height: 1.6;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .timeline .card strong {
+      font-size: 1.1rem;
+      margin: 16px 0 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .cta {
+      margin: 28px 0 64px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta p {
+      color: var(--muted);
+      line-height: 1.72;
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cta-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    footer {
+      padding: 0 0 36px;
+      color: #8c96ad;
+      font-size: 0.92rem;
+    }
+
+    .footer-line {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .cta,
+      .manifesto,
+      .quotes,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .panel,
+      .card,
+      .manifesto-item,
+      .quote,
+      .cta {
+        border-radius: 20px;
+      }
+
+      .panel,
+      .cta,
+      .card,
+      .manifesto-item,
+      .quote {
+        padding: 22px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#start">
+        <div class="brand-badge">PP</div>
+        <span>Partia Populistyczna Przyszłej Polski</span>
+      </a>
+      <nav class="nav">
+        <a href="#program">Program</a>
+        <a href="#wartosci">Wartości</a>
+        <a href="#harmonogram">Plan 100 dni</a>
+        <a href="#kontakt">Kontakt pozorny</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="start" class="shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="panel">
+          <div class="eyebrow">Polska jutra, wczoraj zatwierdzona</div>
+          <h1>Obiecujemy wszystko.<br>Zwłaszcza spójność narracyjną.</h1>
+          <p class="lead">
+            Jesteśmy nową siłą polityczną dla ludzi, którzy chcą zmian, ale najlepiej takich już znanych.
+            Łączymy dynamikę prezentacji grantowej, powagę konferencji prasowej i energię komitetu,
+            który odkrył Canva Pro pięć minut przed rejestracją.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#program">Poznaj program natychmiastowy</a>
+            <a class="btn btn-secondary" href="#kontakt">Zgłoś gotowość do rozczarowania</a>
+          </div>
+          <p class="microcopy">
+            Bez ideologii, chyba że akurat będzie potrzebna do występu telewizyjnego. Z ideami prostymi,
+            ale opakowanymi w bardzo długie zdania.
+          </p>
+        </div>
+
+        <div class="stats">
+          <article class="card">
+            <div class="label">Skuteczność obietnic</div>
+            <strong>137%</strong>
+            <p>Liczone metodą sondażu ulicznego, wewnętrznego i metafizycznego, z pominięciem rzeczywistości wykonawczej.</p>
+          </article>
+          <article class="card">
+            <div class="label">Nowoczesność</div>
+            <strong>4,5 NGO</strong>
+            <p>Wystarczająco dużo, by mówić „inkluzywność”, ale nadal za mało, by wypełnić poprawnie wniosek.</p>
+          </article>
+          <article class="card">
+            <div class="label">Przejrzystość</div>
+            <strong>Półprzezroczysta</strong>
+            <p>Wszystko jest jawne, tylko nie od razu, nie wszędzie i nie dla wszystkich zainteresowanych.</p>
+          </article>
+          <article class="card">
+            <div class="label">Zaplecze eksperckie</div>
+            <strong>9 think tanków</strong>
+            <p>Każdy o tej samej szerokości ideowej, lecz z innym logo i odmiennym kolorem granatu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="program">
+      <div class="section-heading">
+        <div>
+          <h2>Program dla ludzi, narodu i segmentu premium</h2>
+          <p>
+            Nasza propozycja jest celowo pojemna. Chcemy, żeby każdy mógł usłyszeć w niej coś dla siebie,
+            a potem zdziwić się, że chodziło o coś zupełnie innego.
+          </p>
+        </div>
+      </div>
+      <div class="manifesto">
+        <article class="manifesto-item">
+          <span>01</span>
+          <h3>Tanie państwo, drogie studio</h3>
+          <p>
+            Ograniczymy koszty administracji poprzez przeniesienie większości decyzji do estetycznych webinarów,
+            paneli eksperckich i formatów live z dynamicznym dolnym paskiem.
+          </p>
+        </article>
+        <article class="manifesto-item">
+          <span>02</span>
+          <h3>Silna rodzina, elastyczna definicja sukcesu</h3>
+          <p>
+            Każda rodzina otrzyma dostęp do pakietu wartości tradycyjnych, nowoczesnych albo hybrydowych,
+            zależnie od potrzeb kampanii i kalendarza medialnego.
+          </p>
+        </article>
+        <article class="manifesto-item">
+          <span>03</span>
+          <h3>Prawo jasne jak broszura PDF</h3>
+          <p>
+            Uprościmy przepisy tak, aby były zrozumiałe dla wszystkich obywateli posiadających zespół prawny,
+            trzy ekspertyzy i dużą wewnętrzną motywację.
+          </p>
+        </article>
+        <article class="manifesto-item">
+          <span>04</span>
+          <h3>Suwerenność strategicznie konsultowana</h3>
+          <p>
+            Będziemy nieugięci wobec zewnętrznych wpływów, chyba że będą miały atrakcyjny deck, sieć kontaktów
+            i dobrze dobraną typografię bezszeryfową.
+          </p>
+        </article>
+        <article class="manifesto-item">
+          <span>05</span>
+          <h3>Grant dla każdego, raport dla wytrwałych</h3>
+          <p>
+            Uwolnimy potencjał społeczny poprzez konkursy, konkursiki i konkursy pilotażowe, których głównym celem
+            będzie produkcja kolejnych konkursów oraz bardzo pewnych siebie podsumowań.
+          </p>
+        </article>
+        <article class="manifesto-item">
+          <span>06</span>
+          <h3>Moralność operacyjna 2.0</h3>
+          <p>
+            Powiemy obywatelom, jak żyć z troską, stanowczością i pakietem materiałów informacyjnych przypominających,
+            że wolność jest ważna, ale najlepiej nadzorowana przez komitet.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="wartosci">
+      <div class="section-heading">
+        <div>
+          <h2>Nasze wartości podstawowe i dodatkowo fakturowane</h2>
+          <p>
+            Inspirują nas wszystkie najgorsze nawyki polskiego życia publicznego: patos bez pokrycia,
+            eksperckość bez kontaktu z życiem, oraz przekonanie, że najważniejsze jest logo, które „buduje zaufanie”.
+          </p>
+        </div>
+      </div>
+      <div class="quotes">
+        <article class="quote">
+          <p>„Nie idziemy ani w lewo, ani w prawo. Idziemy tam, gdzie akurat jest kamera i miękkie światło.”</p>
+          <small>Rzecznik ds. spontanicznej konsekwencji</small>
+        </article>
+        <article class="quote">
+          <p>„Nasze postulaty są odważne, bo nikt wcześniej nie odważył się połączyć ekspertyzy z horoskopem strategicznym.”</p>
+          <small>Pełnomocniczka ds. wizji i marginesów w PDF</small>
+        </article>
+        <article class="quote">
+          <p>„Jesteśmy obywatelscy do tego stopnia, że każdy obywatel może się z nami zgodzić, jeśli tylko wcześniej się zapisze.”</p>
+          <small>Koordynator krajowy porozumienia tymczasowo stałego</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="harmonogram">
+      <div class="section-heading">
+        <div>
+          <h2>Pierwsze 100 dni odpowiedzialnej dezorientacji</h2>
+          <p>
+            Nie obiecujemy rewolucji. Obiecujemy natomiast serię działań tak komunikacyjnie intensywnych,
+            że przez chwilę naprawdę może się wydawać, że coś się wydarzyło.
+          </p>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="card">
+          <div class="label">Dzień 1</div>
+          <strong>Audyt audytów</strong>
+          <p>Sprawdzimy, które wcześniejsze audyty można audytować jeszcze raz, tym razem z szerszym mandatem i lepszym cateringiem.</p>
+        </article>
+        <article class="card">
+          <div class="label">Dzień 17</div>
+          <strong>Krajowa mapa absurdu</strong>
+          <p>Utworzymy centralny rejestr problemów symbolicznych, medialnych i zupełnie pomylonych z problemami realnymi.</p>
+        </article>
+        <article class="card">
+          <div class="label">Dzień 52</div>
+          <strong>Pakiet przełomów miękkich</strong>
+          <p>Przedstawimy 48-slajdowy plan zmiany kultury administracyjnej bez dotykania administracji, budżetu i procedur.</p>
+        </article>
+        <article class="card">
+          <div class="label">Dzień 100</div>
+          <strong>Wielkie podsumowanie</strong>
+          <p>Ogłosimy sukces etapu przygotowawczego do konsultacji ram wdrożenia założeń wstępnych nowego otwarcia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="cta">
+        <div>
+          <div class="eyebrow">Dołącz do ruchu, zanim stanie się federacją</div>
+          <h2>Przyszłość sama się nie skomunikuje</h2>
+          <p>
+            Jeśli czujesz, że Polska zasługuje na świeżą jakość, dopracowaną oprawę wizualną i program odporny na pytania doprecyzowujące,
+            jesteś dokładnie tam, gdzie powinieneś być. A przynajmniej bardzo blisko tego miejsca.
+          </p>
+        </div>
+        <div class="cta-box">
+          <strong>Kontakt roboczy</strong>
+          <p>biuro@partiapopulistyczna.pl</p>
+          <p>Infolinia czynna od poniedziałku do piątku, z wyłączeniem kryzysów wizerunkowych.</p>
+          <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
+            <a class="btn btn-primary" href="mailto:biuro@partiapopulistyczna.pl">Napisz manifest</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div class="footer-line">
+      <span>© 2026 Partia Populistyczna Przyszłej Polski. Wszelkie podobieństwo do realnych środowisk jest całkowicie zamierzone estetycznie, ale nie organizacyjnie.</span>
+      <span>Gotowe do publikacji przez GitHub Pages.</span>
+    </div>
+  </footer>
+</body>
+</html>
