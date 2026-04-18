@@ -328,6 +328,41 @@
       letter-spacing: -0.03em;
     }
 
+    .setlist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .set-item {
+      padding: 24px;
+    }
+
+    .set-item strong {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .set-item p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .disclaimer {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      color: #9fb0d5;
+      line-height: 1.7;
+    }
+
     .cta {
       margin: 28px 0 64px;
       padding: 32px;
@@ -375,6 +410,7 @@
       .hero-grid,
       .cta,
       .manifesto,
+      .setlist,
       .quotes,
       .timeline {
         grid-template-columns: 1fr;
@@ -430,6 +466,7 @@
       </a>
       <nav class="nav">
         <a href="#program">Program</a>
+        <a href="#standup">Set wyborczy</a>
         <a href="#wartosci">Wartości</a>
         <a href="#harmonogram">Plan 100 dni</a>
         <a href="#kontakt">Kontakt pozorny</a>
@@ -441,20 +478,20 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="panel">
-          <div class="eyebrow">Polska jutra, wczoraj zatwierdzona</div>
-          <h1>Obiecujemy wszystko.<br>Zwłaszcza spójność narracyjną.</h1>
+          <div class="eyebrow">Program sceniczy, krajowo kompatybilny</div>
+          <h1>Wybierzmy z każdej partii to, co najgorsze.<br>I nazwijmy to syntezą.</h1>
           <p class="lead">
-            Jesteśmy nową siłą polityczną dla ludzi, którzy chcą zmian, ale najlepiej takich już znanych.
-            Łączymy dynamikę prezentacji grantowej, powagę konferencji prasowej i energię komitetu,
-            który odkrył Canva Pro pięć minut przed rejestracją.
+            To jest strona fikcyjnej partii zbudowanej z materiału standupowego: miksu obietnic, personalnych fantazji,
+            konferencyjnego bełkotu i programowej odwagi, która działa najlepiej wtedy, gdy nikt nie prosi o doprecyzowanie.
+            Chodzi o polityczny kolaż złożony z cudzych sloganów, absurdów i narodowej potrzeby mówienia „jakoś to będzie”.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#program">Poznaj program natychmiastowy</a>
-            <a class="btn btn-secondary" href="#kontakt">Zgłoś gotowość do rozczarowania</a>
+            <a class="btn btn-primary" href="#standup">Poznaj set wyborczy</a>
+            <a class="btn btn-secondary" href="#kontakt">Zabukuj dezorientację</a>
           </div>
           <p class="microcopy">
-            Bez ideologii, chyba że akurat będzie potrzebna do występu telewizyjnego. Z ideami prostymi,
-            ale opakowanymi w bardzo długie zdania.
+            Satyra sceniczna o Polsce, która chce jednocześnie socjalu, symbolicznego postępu,
+            kultu eksperckości i pełnej bezkarności dla ludzi od wyjaśniania cudzych błędów.
           </p>
         </div>
 
@@ -486,60 +523,106 @@
     <section id="program">
       <div class="section-heading">
         <div>
-          <h2>Program dla ludzi, narodu i segmentu premium</h2>
+          <h2>Program złożony z cudzych obietnic i własnej bezczelności</h2>
           <p>
-            Nasza propozycja jest celowo pojemna. Chcemy, żeby każdy mógł usłyszeć w niej coś dla siebie,
-            a potem zdziwić się, że chodziło o coś zupełnie innego.
+            Zasadnicza idea jest prosta: bierzemy po kawałku z każdej dużej opowieści politycznej,
+            mieszamy to z energią czatu grupowego i ogłaszamy narodowy kompromis dla ludzi, którzy chcą wszystkiego naraz.
           </p>
         </div>
       </div>
       <div class="manifesto">
         <article class="manifesto-item">
           <span>01</span>
-          <h3>Tanie państwo, drogie studio</h3>
+          <h3>Socjal pełny, emocjonalnie rozszerzony</h3>
           <p>
-            Ograniczymy koszty administracji poprzez przeniesienie większości decyzji do estetycznych webinarów,
-            paneli eksperckich i formatów live z dynamicznym dolnym paskiem.
+            Bierzemy najbardziej nośne transfery społeczne i dokładamy do nich kolejne, bo skoro można dopisać „plus”,
+            to można też dopisać „jeszcze jeden plus”, najlepiej również dla psów, kotów i całego elektoratu domowego.
           </p>
         </article>
         <article class="manifesto-item">
           <span>02</span>
-          <h3>Silna rodzina, elastyczna definicja sukcesu</h3>
+          <h3>Postęp obyczajowy na użytek konferencji</h3>
           <p>
-            Każda rodzina otrzyma dostęp do pakietu wartości tradycyjnych, nowoczesnych albo hybrydowych,
-            zależnie od potrzeb kampanii i kalendarza medialnego.
+            Związki jednopłciowe, otwartość, reprezentacja i wszystkie hasła, które dobrze brzmią na scenie,
+            zwłaszcza gdy obok stoją politycy przekonani, że można jednocześnie wszystkich uszczęśliwić i nikogo nie obrazić.
           </p>
         </article>
         <article class="manifesto-item">
           <span>03</span>
-          <h3>Prawo jasne jak broszura PDF</h3>
+          <h3>Personalne fantasy league</h3>
           <p>
-            Uprościmy przepisy tak, aby były zrozumiałe dla wszystkich obywateli posiadających zespół prawny,
-            trzy ekspertyzy i dużą wewnętrzną motywację.
+            Donald dalej na premiera, Czaskowski na marszałka Polski, a resztę stanowisk obsadzimy zgodnie z logiką
+            telewizyjnego castingu: kto ma rozpoznawalność, ten ma kompetencje przynajmniej do następnego sondażu.
           </p>
         </article>
         <article class="manifesto-item">
           <span>04</span>
-          <h3>Suwerenność strategicznie konsultowana</h3>
+          <h3>Mieszkalnictwo luksusowo ratunkowe</h3>
           <p>
-            Będziemy nieugięci wobec zewnętrznych wpływów, chyba że będą miały atrakcyjny deck, sieć kontaktów
-            i dobrze dobraną typografię bezszeryfową.
+            Prezydentura miejska ma być nowoczesna, niebinarna i tak ambitna, żeby dokwaterować wykluczonych do mieszkań,
+            których cena zaczyna się tam, gdzie kończy się zdrowy rozsądek i większość zdolności kredytowej.
           </p>
         </article>
         <article class="manifesto-item">
           <span>05</span>
-          <h3>Grant dla każdego, raport dla wytrwałych</h3>
+          <h3>Państwo socjalne dla wszystkich pomijanych</h3>
           <p>
-            Uwolnimy potencjał społeczny poprzez konkursy, konkursiki i konkursy pilotażowe, których głównym celem
-            będzie produkcja kolejnych konkursów oraz bardzo pewnych siebie podsumowań.
+            Mieszkania socjalne obiecamy wszystkim grupom, o których zwykle mówi się wyłącznie instrumentalnie,
+            bo w naszym programie każda wykluczona wspólnota ma prawo zostać natychmiastowym symbolem kampanii.
           </p>
         </article>
         <article class="manifesto-item">
           <span>06</span>
-          <h3>Moralność operacyjna 2.0</h3>
+          <h3>Granice absurdu jasno zaznaczone</h3>
           <p>
-            Powiemy obywatelom, jak żyć z troską, stanowczością i pakietem materiałów informacyjnych przypominających,
-            że wolność jest ważna, ale najlepiej nadzorowana przez komitet.
+            W secie pojawiają się też pomysły celowo tak skrajne i niedopuszczalne, że funkcjonują wyłącznie jako sygnał alarmowy:
+            jeśli polityka zaczyna brzmieć jak tani szok dla zasięgów, to znaczy, że satyra właśnie spełniła swoją rolę.
+          </p>
+        </article>
+      </div>
+      <div class="disclaimer">
+        To strona stylizowana na program partii, ale jej treść ma charakter satyryczny i sceniczny.
+        Absurd, przesada i zlepek sprzecznych obietnic są tu zamierzone, bo dokładnie z tego bierze się żart.
+      </div>
+    </section>
+
+    <section id="standup">
+      <div class="section-heading">
+        <div>
+          <h2>Set wyborczy przeniesiony na stronę</h2>
+          <p>
+            Tu ląduje sedno numeru scenicznego: marzenie o partii, która z każdej istniejącej siły wyciąga najgłośniejsze hasła,
+            skleja je bez instrukcji i sprzedaje jako dziejową ofertę dla narodu, miasta i telewizji śniadaniowej.
+          </p>
+        </div>
+      </div>
+      <div class="setlist">
+        <article class="card set-item">
+          <strong>Mmmm, wybierzmy to, co najlepsze</strong>
+          <p>
+            Fundament żartu jest prosty: skoro każda partia ma jakiś nośny kawałek, to połączmy wszystkie w jedną wielką konstrukcję,
+            która brzmi jak kompromis narodowy, a działa jak generator komunikacyjnej gorączki.
+          </p>
+        </article>
+        <article class="card set-item">
+          <strong>AI już dopisuje program</strong>
+          <p>
+            Każda konferencja trwa trzy godziny, z czego większość to tłumaczenie, że wszystko idzie zgodnie z planem,
+            tylko plan znowu zmienił postać. Komisje śledcze badają wszystko, łącznie z tym, czemu nic nie wykryły.
+          </p>
+        </article>
+        <article class="card set-item">
+          <strong>Zero odpowiedzialności+</strong>
+          <p>
+            Im wyżej jesteś, tym mniej musisz umieć. Dlatego powołujemy nowe ministerstwo do spraw wyjaśniania,
+            że to nie ich wina, oraz media publiczne tak obiektywne, że nawet prognoza pogody zdradza preferencje ustrojowe.
+          </p>
+        </article>
+        <article class="card set-item">
+          <strong>Konstytucyjna strategia państwa</strong>
+          <p>
+            Wpisujemy do ustawy zasadniczej zdanie „jakoś to będzie”, bo nic tak nie łączy wspólnoty narodowej
+            jak urzędowo zatwierdzony brak planu awaryjnego ukryty pod płaszczem pragmatyzmu.
           </p>
         </article>
       </div>
@@ -548,10 +631,10 @@
     <section id="wartosci">
       <div class="section-heading">
         <div>
-          <h2>Nasze wartości podstawowe i dodatkowo fakturowane</h2>
+          <h2>Nasze wartości podstawowe, sceniczne i do okazjonalnego oburzenia</h2>
           <p>
-            Inspirują nas wszystkie najgorsze nawyki polskiego życia publicznego: patos bez pokrycia,
-            eksperckość bez kontaktu z życiem, oraz przekonanie, że najważniejsze jest logo, które „buduje zaufanie”.
+            Inspirują nas najgorsze nawyki polskiego życia publicznego: patos bez treści, obietnice bez mechanizmu wykonania,
+            moralna wyższość bez samokontroli i święta wiara, że odpowiednio długi briefing zastąpi rzeczywistość.
           </p>
         </div>
       </div>
@@ -608,19 +691,19 @@
     <section id="kontakt">
       <div class="cta">
         <div>
-          <div class="eyebrow">Dołącz do ruchu, zanim stanie się federacją</div>
-          <h2>Przyszłość sama się nie skomunikuje</h2>
+          <div class="eyebrow">To ma działać na scenie i w przeglądarce</div>
+          <h2>Strona dla numeru, który ma zarabiać na dobry cel</h2>
           <p>
-            Jeśli czujesz, że Polska zasługuje na świeżą jakość, dopracowaną oprawę wizualną i program odporny na pytania doprecyzowujące,
-            jesteś dokładnie tam, gdzie powinieneś być. A przynajmniej bardzo blisko tego miejsca.
+            Landing page jest teraz bardziej spięty z Twoim materiałem: pokazuje logikę „wybierania najlepszych kawałków”,
+            absurd personalny, bezkarność instytucjonalną i państwo, które potrafi już tylko produkować konferencje o własnej sprawczości.
           </p>
         </div>
         <div class="cta-box">
-          <strong>Kontakt roboczy</strong>
+          <strong>Kontakt roboczy i bookingowy</strong>
           <p>biuro@partiapopulistyczna.pl</p>
-          <p>Infolinia czynna od poniedziałku do piątku, z wyłączeniem kryzysów wizerunkowych.</p>
+          <p>Infolinia czynna od poniedziałku do piątku, z wyłączeniem kryzysów wizerunkowych i przedłużonych konferencji prasowych.</p>
           <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
-            <a class="btn btn-primary" href="mailto:biuro@partiapopulistyczna.pl">Napisz manifest</a>
+            <a class="btn btn-primary" href="mailto:biuro@partiapopulistyczna.pl">Napisz w sprawie występu</a>
           </div>
         </div>
       </div>
